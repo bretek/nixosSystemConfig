@@ -1,0 +1,67 @@
+* {
+    background-image: none;
+    transition: 20ms;
+    box-shadow: none;
+}
+
+window {
+	background-color: rgba(12, 12, 12, 0.9);
+}
+
+button {
+    color: #FFFFFF;
+    background-color: @background;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    border: none;
+    border-radius: 10px;
+    outline-style: none;
+}
+
+#lock {
+    background-color: @highlight;
+    border-radius: 5px 0px 0px 0px;
+    margin : 100px 0px 0px 550px;
+}
+
+#reboot {
+    border-radius: 0px 0px 0px 5px;
+    margin : 0px 0px 100px 550px;
+}
+
+#logout {
+    border-radius: 0px 5px 0px 0px;
+    margin : 100px 550px 0px 0px;
+}
+
+#shutdown {
+    background-color: @highlight;
+    border-radius: 0px 0px 5px 0px;
+    margin : 0px 550px 100px 0px;
+}
+
+/* options on hover */
+button:focus {
+    background-size: 25%;
+}
+
+button:focus#lock {
+    border-radius: 10px 10px 0px 10px;
+    margin : 80px 0px 0px 530px;
+}
+
+button:focus#reboot {
+    border-radius: 10px 0px 10px 10px;
+    margin : 0px 0px 80px 530px;
+}
+
+button:focus#logout {
+    border-radius: 10px 10px 10px 0px;
+    margin : 80px 530px 0px 0px;
+}
+
+button:focus#shutdown {
+    border-radius: 0px 10px 10px 10px;
+    margin: 0px 530px 80px 0px;
+}
