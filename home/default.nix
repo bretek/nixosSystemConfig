@@ -1,13 +1,9 @@
 { pkgs, nix-colors, ... }:
 {
   imports = [
-    ./fonts
-    ./sway
-    ./zsh
-    ./gtk
+    ./system
+    ./terminal
     ./nvim
-    ./tmux
-    nix-colors.homeManagerModules.default
   ];
 
   colorScheme = nix-colors.colorSchemes.material-darker;
@@ -18,16 +14,16 @@
 
     stateVersion = "23.11";
 
-    packages = [
-      pkgs.mixxx
-      pkgs.gnome-sudoku
-      pkgs.gnome-2048
-      pkgs.gnome-frog
+    packages = with pkgs; [
+      mixxx
+      spotdl
+      gnome-sudoku
+      inkscape
     ];
-
   };
 
-  programs.home-manager.enable = true;
-  programs.java.enable = true;
+
+  #programs.home-manager.enable = true;
+  #programs.java.enable = true;
 }
 

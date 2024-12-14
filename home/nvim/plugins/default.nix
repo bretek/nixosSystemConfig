@@ -1,12 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{ config, ... }:
 {
 
   imports = [
     ./treesitter.nix
     ./telescope.nix
-    #./mason.nix
-    #./csharp.nix
-    ./roslyn.nix
     ./lsp.nix
     ./ts-autotag.nix
   ];

@@ -7,6 +7,8 @@
     nix-direnv.enable = true;
   };
 
+  programs.tmux.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

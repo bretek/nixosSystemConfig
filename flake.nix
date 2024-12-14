@@ -2,19 +2,18 @@
   description = "NixOS System Configuration with Home Manager user";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-24.11";
     nix-colors.url = "github:Misterio77/nix-colors";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     nixvim.url = "github:nix-community/nixvim";
-    nixneovimplugins.url = "github:jooooscha/nixpkgs-vim-extra-plugins";
   };
 
-  outputs = inputs @ { nixpkgs, nix-colors, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, nix-colors, nixvim, ... }: {
     nixosConfigurations = {
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit nix-colors; };
         modules = [
-          ({ ... }: { nixpkgs.overlays = [ inputs.nixneovimplugins.overlays.default ]; })
           ./nixos
           home-manager.nixosModules.home-manager
           {
@@ -25,7 +24,8 @@
               imports = [
                 ./home
                 nix-colors.homeManagerModules.default
-                inputs.nixvim.homeManagerModules.nixvim
+                nixvim.homeManagerModules.nixvim
+                nix-colors.homeManagerModules.default
               ];
             };
           }

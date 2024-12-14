@@ -13,7 +13,6 @@
         # FZF like bindings
         "<C-p>" = "git_files";
         "<leader>p" = "oldfiles";
-        "<C-f>" = "live_grep";
       };
 
       settings.defaults = {

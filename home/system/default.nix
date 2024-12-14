@@ -1,23 +1,24 @@
 { lib, config, ... }:
 {
   imports = [
-    ./wofi.nix
-    ./wlogout
-    ./kanshi.nix
+    ./fonts.nix
     ./waybar
+    ./wlogout
+    ./gtkQt.nix
+    ./kanshi.nix
     ./kitty.nix
     ./hyprlock.nix
     ./hypridle.nix
   ];
+
+  programs.wofi.enable = true;
 
   wayland.windowManager.sway = {
     enable = true;
 
     wrapperFeatures.gtk = true;
 
-    swaynag = {
-      enable = true;
-    };
+    swaynag.enable = true;
 
     extraSessionCommands = ''
       export QT_QPA_PLATFORM=wayland

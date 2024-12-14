@@ -10,9 +10,11 @@
             "nixpkgs-fmt"
           ];
         };
+
         nil_ls.enable = true;
-        #csharp-ls.enable = true;
-        #omnisharp.enable = true;
+
+        csharp_ls.enable = true;
+
         eslint = {
           enable = true;
           settings = {
@@ -20,6 +22,7 @@
           };
         };
       };
+
       keymaps = {
         lspBuf = {
           K = "hover";
@@ -35,22 +38,8 @@
 
     lsp-format.enable = true;
 
-    #none-ls = {
-    #  sources.formatting = {
-    #    prettier.enable = true;
-    #  };
-    #};
-
     luasnip = {
       enable = true;
-      #  settings = {
-      #    enable_autosnippets = true;
-      #    keys = ''
-      #      function()
-      #      return {}
-      #      end
-      #    '';
-      #  };
       fromVscode = [
         {
           lazyLoad = true;
