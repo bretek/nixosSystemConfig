@@ -81,6 +81,7 @@
     usbutils
     tree
     neofetch
+    gnupg
   ];
 
   programs.dconf.enable = true;
