@@ -20,8 +20,6 @@
 
     wl-clipboard
 
-    dotnetCorePackages.sdk_8_0
-
     firefox
   ];
 
