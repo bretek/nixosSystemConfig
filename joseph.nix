@@ -2,7 +2,7 @@
 {
   imports =
     [
-      ./modules/keyd.nix
+      #./modules/keyd.nix
     ];
 
   environment.systemPackages = with pkgs; [
