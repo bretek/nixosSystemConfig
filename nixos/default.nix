@@ -82,6 +82,7 @@
     tree
     neofetch
     gnupg
+    feh
   ];
 
   programs.dconf.enable = true;
