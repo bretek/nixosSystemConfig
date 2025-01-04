@@ -32,6 +32,10 @@
     pulseaudio = true;
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-sdk-6.0.428"
+  ];
+
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
