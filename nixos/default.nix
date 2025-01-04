@@ -52,10 +52,10 @@
     };
   };
 
-  hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
   security.polkit.enable = true;
   services = {
+    pulseaudio.enable = true;
     pipewire.enable = false;
     printing.enable = true;
     blueman.enable = true;
