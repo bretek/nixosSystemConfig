@@ -21,6 +21,9 @@
     wl-clipboard
 
     firefox
+
+    rzls
+    roslyn-ls
   ];
 
   services.pcscd.enable = true;

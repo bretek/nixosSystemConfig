@@ -17,6 +17,9 @@
 
       settings.defaults = {
         set_env.COLORTERM = "truecolor";
+        file_ignore_patterns = [
+          "%__virtual.cs$"
+        ];
       };
     };
   };

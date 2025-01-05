@@ -13,7 +13,7 @@
 
         nil_ls.enable = true;
 
-        csharp_ls.enable = true;
+        html.enable = true;
 
         eslint = {
           enable = true;
