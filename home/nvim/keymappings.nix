@@ -21,8 +21,8 @@
               "N" = "Nzzzv";
 
               # Paste last yanked instead of delete buffer
-              "<leader>p" = "\"_dp";
-              "<leader>P" = "\"_dP";
+              "<leader>p" = "\"0p";
+              "<leader>P" = "\"0P";
 
               # Clipboard
               "<leader>sy" = "\"+y";
