@@ -27,6 +27,7 @@
               # Clipboard
               "<leader>sy" = "\"+y";
               "<leader>sp" = "\"+p";
+              "<leader>sP" = "\"+P";
             };
       in
       config.lib.nixvim.keymaps.mkKeymaps
