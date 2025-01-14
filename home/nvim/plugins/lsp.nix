@@ -26,12 +26,12 @@
       keymaps = {
         lspBuf = {
           K = "hover";
-          "<leader>gr" = "references";
+          gr = "references";
           gd = "definition";
           gi = "implementation";
           gt = "type_definition";
-          "<leader>ca" = "code_action";
-          "<leader>cr" = "rename";
+          ga = "code_action";
+          gc = "rename";
         };
       };
     };
