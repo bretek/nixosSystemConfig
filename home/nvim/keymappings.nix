@@ -7,6 +7,22 @@
 
     keymaps =
       let
+        visual =
+          lib.mapAttrsToList
+            (key: action: {
+              mode = "v";
+              inherit action key;
+            })
+            {
+              # Paste last yanked instead of delete buffer
+              "<leader>p" = "\"0p";
+              "<leader>P" = "\"0P";
+
+              # Clipboard
+              "<leader>sy" = "\"+y";
+              "<leader>sp" = "\"+p";
+              "<leader>sP" = "\"+P";
+            };
         normal =
           lib.mapAttrsToList
             (key: action: {
@@ -32,6 +48,6 @@
       in
       config.lib.nixvim.keymaps.mkKeymaps
         { options.silent = true; }
-        normal;
+        visual ++ normal;
   };
 }
