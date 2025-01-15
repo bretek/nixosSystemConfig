@@ -8,17 +8,17 @@
     ];
 
   # Give group permissions for usb devs
-  #users.groups.plugdev = { };
-  #services.udev.extraRules = ''
-  #  SUBSYSTEM=="usb", MODE="0774", GROUP="plugdev"
-  #  SUBSYSTEM=="hid", MODE="0774", GROUP="plugdev"
-  #  SUBSYSTEM=="hidraw", MODE="0774", GROUP="plugdev"
-  #  SUBSYSTEM=="video4linux", MODE="0774", GROUP="plugdev"
-  #'';
+  users.groups.plugdev = { };
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", MODE="0774", GROUP="plugdev"
+    SUBSYSTEM=="hid", MODE="0774", GROUP="plugdev"
+    SUBSYSTEM=="hidraw", MODE="0774", GROUP="plugdev"
+    SUBSYSTEM=="video4linux", MODE="0774", GROUP="plugdev"
+  '';
 
   users.users.joseph = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
     shell = pkgs.zsh;
   };
 
@@ -59,6 +59,7 @@
     pipewire.enable = false;
     printing.enable = true;
     blueman.enable = true;
+
     greetd = {
       enable = true;
       settings = {
