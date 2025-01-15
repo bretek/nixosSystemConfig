@@ -7,7 +7,12 @@
     nix-direnv.enable = true;
   };
 
-  programs.tmux.enable = true;
+  programs.tmux = {
+    enable = true;
+    extraConfig = ''
+      bind c new-window -c "#{pane_current_path}"
+    '';
+  };
 
   programs.zsh = {
     enable = true;
