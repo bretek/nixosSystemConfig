@@ -15,6 +15,7 @@
     git
     lazygit
     devenv
+    nixfmt-rfc-style
 
     wl-clipboard
 
