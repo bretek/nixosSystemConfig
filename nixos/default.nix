@@ -1,11 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ../joseph.nix
-      ./hardware-configuration.nix
-    ];
+  imports = [ ../joseph.nix ./hardware-configuration.nix ];
 
   # Give group permissions for usb devs
   users.groups.plugdev = { };
@@ -32,19 +28,14 @@
     pulseaudio = true;
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "dotnet-sdk-6.0.428"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "dotnet-sdk-6.0.428" ];
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
   fonts = {
     enableDefaultPackages = true;
-    packages = [
-      pkgs.inter
-      pkgs.fira
-    ];
+    packages = [ pkgs.inter pkgs.fira ];
     fontconfig.defaultFonts = {
       serif = [ "Inter" ];
       sansSerif = [ "Inter" ];

@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-{
-  imports =
-    [
-      #./modules/keyd.nix
-    ];
+{ pkgs, ... }: {
+  imports = [
+    #./modules/keyd.nix
+  ];
 
   environment.systemPackages = with pkgs; [
     pavucontrol
@@ -35,8 +33,10 @@
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   programs.zsh.enable = true;
