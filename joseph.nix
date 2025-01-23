@@ -23,6 +23,7 @@
 
     rzls
     roslyn-ls
+    ccls
   ];
 
   services.pcscd.enable = true;

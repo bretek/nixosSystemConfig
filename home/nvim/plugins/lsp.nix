@@ -15,6 +15,8 @@
 
         html.enable = true;
 
+        ccls.enable = true;
+
         eslint = {
           enable = true;
           settings = {
