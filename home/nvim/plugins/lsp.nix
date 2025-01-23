@@ -18,7 +18,9 @@
         eslint = {
           enable = true;
           settings = {
-            format = { enable = true; };
+            format = {
+              enable = true;
+            };
           };
         };
       };
@@ -51,7 +53,10 @@
     nvim-autopairs = {
       enable = true;
       settings = {
-        disable_filetype = [ "TelescopePrompt" "vim" ];
+        disable_filetype = [
+          "TelescopePrompt"
+          "vim"
+        ];
       };
     };
 
@@ -60,7 +65,9 @@
 
       settings = {
         autoEnableSources = true;
-        experimental = { ghost_text = true; };
+        experimental = {
+          ghost_text = true;
+        };
 
         performance = {
           debounce = 60;
@@ -68,7 +75,9 @@
           maxViewEntries = 30;
         };
 
-        snippet = { expand = "luasnip"; };
+        snippet = {
+          expand = "luasnip";
+        };
 
         sources = [
           { name = "nvim_lsp"; }
@@ -89,8 +98,12 @@
         ];
 
         window = {
-          completion = { border = "none"; };
-          documentation = { border = "solid"; };
+          completion = {
+            border = "none";
+          };
+          documentation = {
+            border = "solid";
+          };
         };
 
         mapping = {
@@ -148,11 +161,21 @@
       };
     };
 
-    cmp-nvim-lsp = { enable = true; }; # lsp
-    cmp-buffer = { enable = true; };
-    cmp-path = { enable = true; }; # file system paths
-    cmp_luasnip = { enable = true; }; # snippets
-    cmp-cmdline = { enable = false; }; # autocomplete for cmdline
+    cmp-nvim-lsp = {
+      enable = true;
+    }; # lsp
+    cmp-buffer = {
+      enable = true;
+    };
+    cmp-path = {
+      enable = true;
+    }; # file system paths
+    cmp_luasnip = {
+      enable = true;
+    }; # snippets
+    cmp-cmdline = {
+      enable = false;
+    }; # autocomplete for cmdline
 
     dap = {
       enable = true;
