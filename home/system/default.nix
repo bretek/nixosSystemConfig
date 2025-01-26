@@ -51,6 +51,7 @@
           "${modifier}+q" = "workspace number 1";
           "${modifier}+w" = "workspace number 2";
           "${modifier}+f" = "workspace number 3";
+          "${modifier}+p" = "workspace number 4";
 
           "${modifier}+Backspace" = "exec pidof wlogout || wlogout -n -b 2";
           "${modifier}+l" = "exec hyprlock";
@@ -66,7 +67,6 @@
           "XF86AudioPlay" = "exec playerctl play-pause";
           "XF86AudioPause" = "exec playerctl play-pause";
         };
-
 
       input = {
         "*" = {
