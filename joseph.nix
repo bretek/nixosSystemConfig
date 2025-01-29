@@ -22,6 +22,8 @@
 
     firefox
     glow
+    bitwig-studio
+    libreoffice
 
     rzls
     roslyn-ls
