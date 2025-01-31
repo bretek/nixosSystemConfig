@@ -19,6 +19,8 @@
     nixfmt-rfc-style
 
     wl-clipboard
+    cryptsetup
+    udisks2
 
     firefox
     glow
@@ -29,6 +31,8 @@
     roslyn-ls
     ccls
   ];
+
+  services.udisks2.enable = true;
 
   services.pcscd.enable = true;
   programs.gnupg.agent = {
