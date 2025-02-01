@@ -5,6 +5,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    sway
     pavucontrol
     brightnessctl
     playerctl

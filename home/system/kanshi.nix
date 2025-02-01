@@ -7,7 +7,8 @@
         profile.name = "home_office";
         profile.outputs = [
           {
-            criteria = "DP-1";
+            #criteria = "DP-1";
+            criteria = "DVI-I-1";
             status = "enable";
           }
           {
