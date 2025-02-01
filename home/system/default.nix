@@ -52,6 +52,10 @@
           "${modifier}+w" = "workspace number 2";
           "${modifier}+f" = "workspace number 3";
           "${modifier}+p" = "workspace number 4";
+          "${modifier}+Control+q" = "move window to workspace number 1";
+          "${modifier}+Control+w" = "move window to workspace number 2";
+          "${modifier}+Control+f" = "move window to workspace number 3";
+          "${modifier}+Control+p" = "move window to workspace number 4";
 
           "${modifier}+Backspace" = "exec pidof wlogout || wlogout -n -b 2";
           "${modifier}+l" = "exec hyprlock";
