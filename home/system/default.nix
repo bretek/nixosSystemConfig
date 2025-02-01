@@ -25,7 +25,7 @@
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
     '';
 
-    extraConfigEarly = ''
+    extraConfig = ''
       	workspace 1
     '';
     config = {
