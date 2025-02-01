@@ -22,7 +22,7 @@
     cryptsetup
     udisks2
 
-    firefox
+    firefox-wayland
     glow
     bitwig-studio
     libreoffice
