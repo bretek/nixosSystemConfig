@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../joseph.nix ./hardware-configuration.nix ];
+  imports = [
+    ../joseph.nix
+    ./hardware-configuration.nix
+  ];
 
   # Give group permissions for usb devs
   users.groups.plugdev = { };
@@ -14,13 +17,23 @@
 
   users.users.joseph = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "plugdev" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "plugdev"
+    ];
     shell = pkgs.zsh;
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "root" "@wheel" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    trusted-users = [
+      "root"
+      "@wheel"
+    ];
   };
 
   nixpkgs.config = {
@@ -35,7 +48,10 @@
 
   fonts = {
     enableDefaultPackages = true;
-    packages = [ pkgs.inter pkgs.fira ];
+    packages = [
+      pkgs.inter
+      pkgs.fira
+    ];
     fontconfig.defaultFonts = {
       serif = [ "Inter" ];
       sansSerif = [ "Inter" ];
@@ -115,4 +131,3 @@
 
   system.stateVersion = "23.11";
 }
-
