@@ -6,7 +6,6 @@
 
   environment.systemPackages = with pkgs; [
     pavucontrol
-    kanshi
     brightnessctl
     playerctl
     fzf

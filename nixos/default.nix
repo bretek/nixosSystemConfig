@@ -117,6 +117,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    sway
+    kanshi
     curl
     wget
     unzip
