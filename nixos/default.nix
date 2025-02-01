@@ -59,8 +59,19 @@
     };
   };
 
+  hardware = {
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        intel-vaapi-driver
+        libvdpau-va-gl
+      ];
+    };
+  };
+
   powerManagement.enable = true;
-  hardware.bluetooth.enable = true;
   security.polkit.enable = true;
   services = {
     pulseaudio.enable = true;
