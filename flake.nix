@@ -2,7 +2,7 @@
   description = "NixOS System Configuration with Home Manager user";
 
   inputs = {
-    nixpkgs.url = "github:bretek/nixpkgs/master";
+    nixpkgs.url = "github:bretek/nixpkgs/libfprint-goodix5117";
     nix-colors.url = "github:Misterio77/nix-colors";
     home-manager.url = "github:nix-community/home-manager";
     nixvim.url = "github:nix-community/nixvim";
