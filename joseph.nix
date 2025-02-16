@@ -30,6 +30,7 @@
     rzls
     roslyn-ls
     ccls
+    python313Packages.jedi
   ];
 
   services.udisks2.enable = true;

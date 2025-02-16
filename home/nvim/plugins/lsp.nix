@@ -17,6 +17,8 @@
 
         ccls.enable = true;
 
+        jedi_language_server.enable = true;
+
         eslint = {
           enable = true;
           settings = {
