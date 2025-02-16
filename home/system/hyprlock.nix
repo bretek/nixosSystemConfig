@@ -18,8 +18,8 @@
       };
 
       label = {
-        text = "cmd[update:1000] echo \"$(date +\"%H:%M\")\"";
-        color = "${config.colorScheme.palette.base05}";
+        text = "cmd[update:1000] echo $TIME";
+        color = "rgb(${config.colorScheme.palette.base05})";
         font_size = 80;
         position = "0, 100";
         halign = "center";
@@ -32,11 +32,12 @@
         dots_size = 0.2;
         dots_spacing = 0.4;
         dots_center = true;
-        inner_color = "#${config.colorScheme.palette.base01}";
-        font_color = "#${config.colorScheme.palette.base05}";
+        inner_color = "rgb(${config.colorScheme.palette.base01})";
+        check_color = "rgb(${config.colorScheme.palette.base01})";
+        font_color = "rgb(${config.colorScheme.palette.base05})";
         fade_on_empty = false;
         placeholder_text = "Enter password...";
-        fail_color = "#${config.colorScheme.palette.base05}";
+        fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
         hide_input = false;
         position = "0, -50";
         halign = "center";
