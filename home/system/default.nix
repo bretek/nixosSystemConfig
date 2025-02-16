@@ -25,14 +25,11 @@
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
     '';
 
-    extraConfig = ''
-      	workspace 1
-    '';
     config = {
       modifier = "Mod4";
       # Use kitty as default terminal
       terminal = "kitty";
-      defaultWorkspace = "workspace 1";
+      defaultWorkspace = "workspace number 1";
       startup = [
         # Launch Firefox on start
         { command = "firefox"; }
