@@ -7,6 +7,19 @@
         profile.name = "home_office";
         profile.outputs = [
           {
+            criteria = "DP-1";
+            status = "enable";
+          }
+          {
+            criteria = "eDP-1";
+            status = "disable";
+          }
+        ];
+      }
+      {
+        profile.name = "home_office_displaylink";
+        profile.outputs = [
+          {
             #criteria = "DP-1";
             criteria = "DVI-I-1";
             status = "enable";
