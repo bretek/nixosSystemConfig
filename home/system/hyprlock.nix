@@ -8,6 +8,11 @@
         hide_cursor = true;
         disable_loading_bar = true;
       };
+      auth = {
+        fingerprint = {
+          enabled = true;
+        };
+      };
       background = {
         path = "${./black_sand.jpg}";
       };

@@ -83,6 +83,8 @@
       "displaylink"
     ];
 
+    fprintd.enable = true;
+
     tlp = {
       enable = true;
       settings = {
@@ -119,6 +121,16 @@
     };
   };
 
+  security.pam.services.hyprlock = {
+    text = ''
+      auth sufficient pam_unix.so try_first_pass likeauth nullok
+      auth sufficient pam_fprintd.so
+      auth requisite pam_deny.so
+      auth required pam_permit.so
+      auth        include     login
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     sway
     kanshi
@@ -134,6 +146,7 @@
     neofetch
     gnupg
     feh
+    fprintd
   ];
 
   programs.dconf.enable = true;
@@ -156,6 +169,7 @@
   ];
 
   systemd.services.dlm.wantedBy = [ "multi-user.target" ];
+  systemd.services.fprintd.wantedBy = [ "multi-user.target" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
