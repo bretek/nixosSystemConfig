@@ -15,6 +15,9 @@
     SUBSYSTEM=="video4linux", MODE="0774", GROUP="plugdev"
   '';
 
+  # Enable USB redirection (optional)
+  virtualisation.spiceUSBRedirection.enable = true;
+
   users.users.joseph = {
     isNormalUser = true;
     extraGroups = [
@@ -132,8 +135,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    sway
-    kanshi
     curl
     wget
     unzip
@@ -146,13 +147,17 @@
     neofetch
     gnupg
     feh
+    wireshark
     fprintd
+
+    qemu_kvm
   ];
 
   programs.dconf.enable = true;
 
   environment.variables = {
     WLR_EVDI_RENDER_DEVICE = "/dev/dri/card1";
+    _JAVA_AWT_WM_NONREPARENTING = 1;
   };
   nixpkgs.overlays = [
     (final: prev: {

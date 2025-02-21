@@ -18,6 +18,16 @@
     devenv
     nixfmt-rfc-style
 
+    qemu
+    quickemu
+
+    wireshark
+
+    gdb
+    netcoredbg
+
+    ghidra-bin
+
     wl-clipboard
     cryptsetup
     udisks2
@@ -25,6 +35,7 @@
     firefox-wayland
     glow
     bitwig-studio
+    reaper
     libreoffice
 
     rzls
