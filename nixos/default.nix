@@ -121,16 +121,6 @@
     };
   };
 
-  security.pam.services.hyprlock = {
-    text = ''
-      auth sufficient pam_unix.so try_first_pass likeauth nullok
-      auth sufficient pam_fprintd.so
-      auth requisite pam_deny.so
-      auth required pam_permit.so
-      auth        include     login
-    '';
-  };
-
   environment.systemPackages = with pkgs; [
     curl
     wget
@@ -171,7 +161,10 @@
   ];
 
   systemd.services.dlm.wantedBy = [ "multi-user.target" ];
-  systemd.services.fprintd.wantedBy = [ "multi-user.target" ];
+  systemd.services.fprintd = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.Type = "simple";
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
