@@ -37,6 +37,7 @@
     bitwig-studio
     reaper
     libreoffice
+    blender
 
     rzls
     roslyn-ls
