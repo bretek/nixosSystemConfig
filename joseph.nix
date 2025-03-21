@@ -38,6 +38,8 @@
     reaper
     libreoffice
     blender
+    imagemagickBig
+    gimp
 
     rzls
     roslyn-ls
