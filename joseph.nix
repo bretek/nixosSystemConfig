@@ -40,6 +40,7 @@
     blender
     imagemagickBig
     gimp
+    wireguard-tools
 
     rzls
     roslyn-ls
