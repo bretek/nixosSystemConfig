@@ -40,6 +40,7 @@
     blender
     imagemagickBig
     gimp
+    xxd
     zoom-us
     wireguard-tools
 
