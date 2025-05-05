@@ -40,6 +40,7 @@
     blender
     imagemagickBig
     gimp
+    zoom-us
     wireguard-tools
 
     rzls
