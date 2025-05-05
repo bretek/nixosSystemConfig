@@ -50,9 +50,9 @@
         };
 
         battery = {
-          format = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
-          format-plugged = " {capacity}%";
+          format = "{icon}  {capacity}%";
+          format-charging = "  {capacity}%";
+          format-plugged = "  {capacity}%";
           full-at = 80;
           tooltip = false;
           "format-icons" = [
