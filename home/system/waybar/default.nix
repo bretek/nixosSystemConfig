@@ -1,13 +1,16 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.waybar = {
     enable = true;
 
-    style = builtins.concatStringsSep "\n" [''
-      @define-color background alpha(#${config.colorScheme.palette.base01}, 0.85);
-      @define-color focusedButton alpha(#${config.colorScheme.palette.base02}, 0.85);
+    style = builtins.concatStringsSep "\n" [
+      ''
+        @define-color background alpha(#${config.colorScheme.palette.base01}, 0.85);
+        @define-color focusedButton alpha(#${config.colorScheme.palette.base02}, 0.85);
 
-      @import "${./style.css}";
-    ''];
+        @import "${./style.css}";
+      ''
+    ];
 
     settings = {
       mainBar = {
@@ -17,18 +20,33 @@
 
         modules-left = [ "sway/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "bluetooth" "network" "battery" ];
+        modules-right = [
+          "pulseaudio"
+          "bluetooth"
+          "network"
+          "battery"
+        ];
 
-        pulseaudio = { "on-click" = "pavucontrol"; };
+        pulseaudio = {
+          "on-click" = "pavucontrol";
+        };
 
-        bluetooth = { on-click = "blueman-manager"; };
+        bluetooth = {
+          on-click = "blueman-manager";
+        };
 
         network = {
           "format-wifi" = " {icon}";
           "format-ethernet" = "  ";
           "format-disconnected" = "󰌙";
           tooltip = false;
-          "format-icons" = [ "󰤯 " "󰤟 " "󰤢 " "󰤢 " "󰤨 " ];
+          "format-icons" = [
+            "󰤯 "
+            "󰤟 "
+            "󰤢 "
+            "󰤢 "
+            "󰤨 "
+          ];
         };
 
         battery = {
@@ -37,7 +55,13 @@
           format-plugged = " {capacity}%";
           full-at = 80;
           tooltip = false;
-          "format-icons" = [ "" "" "" "" "" ];
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
 
         clock = {
