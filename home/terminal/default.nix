@@ -2,7 +2,9 @@
 {
   programs.direnv = {
     enable = true;
-    config = { hide_env_diff = true; };
+    config = {
+      hide_env_diff = true;
+    };
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
@@ -31,7 +33,7 @@
         "fzf"
       ];
     };
-    initExtra = ''
+    initContent = ''
       	bindkey "^[c" fzf-cd-widget
     '';
   };

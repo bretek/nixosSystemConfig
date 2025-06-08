@@ -13,9 +13,9 @@
 
         nil_ls.enable = true;
 
-        html.enable = true;
+        #html.enable = true;
 
-        ccls.enable = true;
+        #ccls.enable = true;
 
         jedi_language_server.enable = true;
 
@@ -183,6 +183,11 @@
 
     dap = {
       enable = true;
+    };
+
+    none-ls = {
+      enable = true;
+      sources.formatting.csharpier.enable = true;
     };
   };
 }

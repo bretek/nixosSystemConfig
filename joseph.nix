@@ -17,6 +17,7 @@
     lazygit
     devenv
     nixfmt-rfc-style
+    gcc
 
     qemu
     quickemu
@@ -43,6 +44,8 @@
     xxd
     zoom-us
     wireguard-tools
+
+    docker-compose
 
     rzls
     roslyn-ls

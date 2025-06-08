@@ -21,6 +21,7 @@
       "networkmanager"
       "wheel"
       "plugdev"
+      "docker"
     ];
     shell = pkgs.zsh;
   };
@@ -35,6 +36,8 @@
       "@wheel"
     ];
   };
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   nixpkgs.config = {
     allowUnfree = true;
@@ -172,6 +175,11 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "none";
+  networking.nameservers = [
+    "192.168.1.1"
+    "1.1.1.1"
+  ];
 
   system.stateVersion = "23.11";
 }
