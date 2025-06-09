@@ -25,19 +25,21 @@
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
     '';
 
+    extraConfigEarly = ''
+      	workspace 1
+    '';
     config = {
       modifier = "Mod4";
       # Use kitty as default terminal
       terminal = "kitty";
-      defaultWorkspace = "workspace number 1";
       startup = [
         # Launch Firefox on start
         { command = "firefox"; }
         { command = "hyprlock"; }
-        {
-          command = "pkill kanshi; kanshi";
-          always = true;
-        }
+        #{
+        #  command = "pkill kanshi; kanshi";
+        #  always = true;
+        #}
       ];
 
       keybindings =
@@ -56,6 +58,9 @@
 
           "${modifier}+Backspace" = "exec pidof wlogout || wlogout -n -b 2";
           "${modifier}+l" = "exec hyprlock";
+
+          "${modifier}+s" =
+            "exec --no-startup-id wofi --show=drun search -modi search:rofi-web-search -i -p \"Search: \"";
 
           "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%";
           "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%";

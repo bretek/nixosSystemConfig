@@ -12,6 +12,7 @@
     fzf
     nix-search-cli
     swayosd
+    wdisplays
 
     git
     lazygit

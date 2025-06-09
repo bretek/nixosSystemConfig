@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
@@ -76,15 +76,13 @@
 
   powerManagement.enable = true;
   security.polkit.enable = true;
+
   services = {
     pulseaudio.enable = true;
     pipewire.enable = false;
     printing.enable = true;
     blueman.enable = true;
     thermald.enable = true;
-    xserver.videoDrivers = [
-      "displaylink"
-    ];
 
     fprintd.enable = true;
 
@@ -113,11 +111,11 @@
       enable = true;
       settings = {
         default_session = {
-          command = "sway --unsupported-gpu";
+          command = "sway";
           user = "joseph";
         };
         initial_session = {
-          command = "sway --unsupported-gpu";
+          command = "sway";
           user = "joseph";
         };
       };
@@ -138,20 +136,22 @@
     gnupg
     feh
     wireshark
+
     fprintd
+    displaylink
 
     qemu_kvm
   ];
 
   programs.dconf.enable = true;
 
+  # displaylink
   environment.variables = {
     WLR_EVDI_RENDER_DEVICE = "/dev/dri/card1";
-    _JAVA_AWT_WM_NONREPARENTING = 1;
   };
   nixpkgs.overlays = [
     (final: prev: {
-      wlroots_0_18 = prev.wlroots_0_18.overrideAttrs (old: {
+      wlroots_0_17 = prev.wlroots_0_17.overrideAttrs (old: {
         # you may need to use 0_18
         patches = (old.patches or [ ]) ++ [
           (prev.fetchpatch {
@@ -162,12 +162,32 @@
       });
     })
   ];
-
+  services.xserver.videoDrivers = [ "displaylink" ];
   systemd.services.dlm.wantedBy = [ "multi-user.target" ];
-  systemd.services.fprintd = {
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.Type = "simple";
+
+  environment.variables = {
+    #WLR_EVDI_RENDER_DEVICE = "/dev/dri/card1";
+    _JAVA_AWT_WM_NONREPARENTING = 1;
   };
+  #  nixpkgs.overlays = [
+  #    (final: prev: {
+  #      wlroots_0_18 = prev.wlroots_0_18.overrideAttrs (old: {
+  #        # you may need to use 0_18
+  #        patches = (old.patches or [ ]) ++ [
+  #          (prev.fetchpatch {
+  #            url = "https://gitlab.freedesktop.org/wlroots/wlroots/uploads/bd115aa120d20f2c99084951589abf9c/DisplayLink_v2.patch";
+  #            hash = "sha256-vWQc2e8a5/YZaaHe+BxfAR/Ni8HOs2sPJ8Nt9pfxqiE=";
+  #          })
+  #        ];
+  #      });
+  #    })
+  #  ];
+
+  #systemd.services.dlm.wantedBy = [ "multi-user.target" ];
+  #systemd.services.fprintd = {
+  #  wantedBy = [ "multi-user.target" ];
+  #  serviceConfig.Type = "simple";
+  #};
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
