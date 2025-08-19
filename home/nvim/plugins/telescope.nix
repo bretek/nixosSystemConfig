@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
+    home.packages = [ pkgs.ripgrep ];
     plugins.telescope = {
       enable = true;
 
