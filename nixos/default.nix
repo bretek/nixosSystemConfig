@@ -1,4 +1,8 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -78,6 +82,7 @@
   security.polkit.enable = true;
 
   services = {
+    openssh.enable = true;
     pulseaudio.enable = true;
     pipewire.enable = false;
     printing.enable = true;
@@ -111,11 +116,11 @@
       enable = true;
       settings = {
         default_session = {
-          command = "sway";
+          command = "hyprland";
           user = "joseph";
         };
         initial_session = {
-          command = "sway";
+          command = "hyprland";
           user = "joseph";
         };
       };
@@ -123,6 +128,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    hyprland
     curl
     wget
     unzip
@@ -136,6 +142,8 @@
     gnupg
     feh
     wireshark
+    sbctl
+    networkmanagerapplet
 
     fprintd
     displaylink
@@ -190,16 +198,22 @@
   #};
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none";
-  networking.nameservers = [
-    "192.168.1.1"
-    "1.1.1.1"
-  ];
+  #networking.networkmanager.dns = "none";
+  #networking.nameservers = [
+  #      #"192.168.1.1"
+  #  "1.1.1.1"
+  #  "1.0.0.1"
+  #];
 
   system.stateVersion = "23.11";
 }

@@ -16,7 +16,7 @@
       }
       {
         label = "logout";
-        action = "sway exit";
+        action = "hyprland exit";
         keybind = "o";
       }
       {

@@ -5,13 +5,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    sway
     pavucontrol
     brightnessctl
     playerctl
     fzf
     nix-search-cli
-    swayosd
     wdisplays
 
     git
