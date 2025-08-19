@@ -6,6 +6,10 @@
     nix-colors.url = "github:Misterio77/nix-colors";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     nixvim.url = "github:nix-community/nixvim";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -14,6 +18,7 @@
       home-manager,
       nix-colors,
       nixvim,
+      lanzaboote,
       ...
     }:
     {
@@ -22,6 +27,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit nix-colors; };
           modules = [
+            lanzaboote.nixosModules.lanzaboote
             ./nixos
             home-manager.nixosModules.home-manager
             {
